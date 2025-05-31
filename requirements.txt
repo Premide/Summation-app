@@ -1,2 +1,3 @@
-Python
-html
+Flask
+gunicorn
+psutil
