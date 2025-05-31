@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Σ (1 / n²) from i to j</h1>
+    <form method="POST">
+        <label for="i">Enter i (start):</label><br>
+        <input type="number" name="i" id="i" required><br>
+
+        <label for="j">Enter j (end):</label><br>
+        <input type="number" name="j" id="j" required><br>
+
+        <button type="submit">Compute</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            Result of Σ (1 / n²) from {{ i }} to {{ j }} is: {{ result }}
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>
